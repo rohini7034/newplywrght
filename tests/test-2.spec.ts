@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://neweudit1-4tjg.vercel.app/landing');
+  await page.locator('div').filter({ hasText: /^ProjectExplore and manage ongoing projects seamlessly\.show$/ }).getByRole('link').click();
+  await page.getByRole('button', { name: 'Add Project' }).click();
+  await page.getByRole('textbox', { name: 'ID *' }).click();
+  await page.getByRole('textbox', { name: 'ID *' }).fill('fff');
+  await page.getByRole('textbox', { name: 'Name *' }).click();
+  await page.getByRole('textbox', { name: 'Name *' }).fill('eeee');
+  await page.getByRole('combobox').filter({ hasText: 'Select Owner' }).click();
+  await page.getByLabel('whooos hello').getByText('whooos hello').click();
+  await page.getByRole('combobox').filter({ hasText: 'Select Manager' }).click();
+  await page.getByRole('option', { name: 'ggff dfs' }).click();
+  await page.getByRole('combobox').filter({ hasText: 'Select Client' }).click();
+  await page.getByLabel('ssooll').getByText('ssooll').click();
+  await page.getByRole('combobox').filter({ hasText: 'Select Category' }).click();
+  await page.getByRole('option', { name: 'General Audit' }).click();
+  await page.getByRole('combobox').filter({ hasText: 'Select Proposal Status' }).click();
+  await page.getByRole('option', { name: 'Won' }).click();
+  await page.getByRole('combobox').filter({ hasText: 'Select Project Stage' }).click();
+  await page.getByRole('option', { name: 'On Going' }).click();
+  await page.getByRole('textbox', { name: 'Work Number' }).click();
+  await page.getByRole('textbox', { name: 'Work Number' }).fill('4');
+  await page.getByRole('textbox', { name: 'Start Date' }).fill('2022-01-12');
+  await page.getByRole('textbox', { name: 'End Date' }).press('ArrowRight');
+  await page.getByRole('textbox', { name: 'End Date' }).press('ArrowRight');
+  await page.getByRole('textbox', { name: 'End Date' }).press('ArrowRight');
+  await page.getByRole('textbox', { name: 'End Date' }).fill('2023-12-12');
+});
