@@ -52,7 +52,8 @@ export class ProjectPage {
     await this.startDateInput.fill(startDate);
     await this.endDateInput.fill(endDate);
    
-
+   
+    console.log('project added successfully');
    
   }
   

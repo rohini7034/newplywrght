@@ -5,7 +5,7 @@ import { StaffManagementPage } from './pages/ StaffManagementPage';
 import { AddStaffPage } from './pages/AddStaffPage';
 
 test('User should be able to add a staff member', async ({ page }) => {
-  await page.waitForTimeout(3000);  
+  await page.waitForTimeout(2000);  
 
   const loginPage = new LoginPage(page);
   const staffPage = new StaffManagementPage(page);
@@ -15,7 +15,7 @@ test('User should be able to add a staff member', async ({ page }) => {
   await loginPage.login('test@gmail.com', 'test');
 
   await staffPage.navigateToStaffManagement();
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(2000);
   await staffPage.clickAddStaff();
   await page.waitForTimeout(2000);  
 
@@ -30,6 +30,7 @@ test('User should be able to add a staff member', async ({ page }) => {
     dob: '1978-02-11',
     language: 'English',
     gender: 'Male',
+   
   });
 
   await addStaffPage.saveStaff();

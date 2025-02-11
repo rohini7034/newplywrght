@@ -17,6 +17,7 @@ export class AddStaffPage {
     dob: string;
     language: string;
     gender: string;
+    
   }) {
     await this.page.getByRole('combobox').filter({ hasText: 'Select your Salutation' }).click();
     await this.page.getByRole('option', { name: details.salutation }).click();
@@ -33,6 +34,8 @@ export class AddStaffPage {
 
     await this.page.getByRole('combobox').filter({ hasText: 'Select your gender' }).click();
     await this.page.getByRole('option', { name: details.gender, exact: true }).click();
+
+    
   }
 
   async saveStaff() {
