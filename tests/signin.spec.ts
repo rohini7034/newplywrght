@@ -8,5 +8,5 @@ test('login test using POM', async ({ page }) => {
   await signInPage.goto();
   await signInPage.login('didouttojutro-1120@yopmail.com', 'ORG193', 'password');
   console.log('logged successfully');
-
+  await page.waitForTimeout(5000);  
 });
